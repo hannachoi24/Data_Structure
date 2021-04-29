@@ -5,6 +5,7 @@
 int main()
 {
     d_linked_list<int> list1;
+
     for (int i = 0; i < 5; i++)
     {
         list1.push_front(i);
