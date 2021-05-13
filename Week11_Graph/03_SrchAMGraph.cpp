@@ -5,7 +5,7 @@ int main(void)
 {
     SrchAMGraph g;
     g.load("./data/graph2.txt");
-    std::cout << " 그래프를 불러왔습니다. \n";
+    std::cout << "그래프를 불러왔습니다 \n";
     g.display();
 
     std::cout << "DFS ==> ";

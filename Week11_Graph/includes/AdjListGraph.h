@@ -28,6 +28,7 @@ protected:
     int size;                       // Vertex의 총 수
     std::string vertices[MAX_VTXS]; // Vertex의 정보 (Node 등으로 확장이 가능)
     Node *adj[MAX_VTXS];            // 각 Vertex의 인접 리스트
+
 public:
     AdjListGraph(void) : size(0) {}
     ~AdjListGraph(void) { reset(); }
@@ -40,7 +41,6 @@ public:
         }
         size = 0;
     }
-
     bool isEmpty() { return size == 0; }
     bool isFull() { return size >= MAX_VTXS; }
     std::string getVertex(int i) { return vertices[i]; }
@@ -54,7 +54,7 @@ public:
         }
         else
         {
-            std ::cout << "최대 정점 수 이상을 입력 시도했습니다.";
+            std::cout << "최대 정점 수 이상을 입력 시도했습니다.";
         }
     }
 
@@ -64,7 +64,7 @@ public:
         //만약 Adj Matrix와같은 순서로 만들고 싶으면
         if (adj[u] == nullptr)
         {
-            adj[u] == new Node(v, adj[u]);
+            adj[u] = new Node(v, adj[u]);
         }
         else
         {
@@ -75,6 +75,7 @@ public:
             }
             p->setLink(new Node(v, nullptr));
         }
+        //adj[v] = new Node(u, adj[v]);
     }
 
     void display()
@@ -82,7 +83,7 @@ public:
         std::cout << size << "\n";
         for (int i = 0; i < size; i++)
         {
-            std::cout << getVertex(i) << " ";
+            std::cout << getVertex(i) << "  ";
             for (Node *v = adj[i]; v != nullptr; v = v->getLink())
             {
                 std::cout << getVertex(v->getId()) << " "; // 본인 id에 해당하는 vertex를 불러서 vertex 정보를 가져옴

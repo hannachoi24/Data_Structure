@@ -17,7 +17,7 @@ public:
             visited[i] = false;
     } // 방문기록을 모두 삭제
 
-    bool isLinked(int u, int v) {}
+    bool isLinked(int u, int v) { return getEdge(u, v) != 0; }
 
     // 깊이 우선 탐색(DFS)
     void DFS(int v)

@@ -19,8 +19,8 @@ public:
     ~AdjMatGraph() {}
 
     std::string getVertex(int i) { return vertices[i]; }
-    int getEdge(int i, int j) {}
-    void setEdge(int i, int j, int val) {}
+    int getEdge(int i, int j) { return adj[i][j]; }
+    void setEdge(int i, int j, int val) { adj[i][j] = val; }
     bool isEmpty() { return size == 0; }
     bool isFull() { return size >= MAX_VTXS; }
 
